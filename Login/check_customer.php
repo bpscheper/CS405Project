@@ -1,9 +1,9 @@
 <?php
 
-$eid = $_POST['eid'];
+$username = $_POST['username'];
 $password = $_POST['password'];
 
-echo $eid;
+echo $username;
 echo $password;
 
 ?>
