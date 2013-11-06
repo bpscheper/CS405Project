@@ -23,9 +23,9 @@ echo '<tr><td>Zip Code </td><td>:</td><td><input name="zip" type="text" id="zip"
         placeholder="Zip Code"></td></tr>';
 echo '<tr><td>Username </td><td>:</td><td><input name="username" type="text" id="username"
         placeholder="Username"></td></tr>';
-echo '<tr><td>Password </td><td>:</td><td><input name="password1" type="password" id="passqord1"
+echo '<tr><td>Password </td><td>:</td><td><input name="password1" type="password" id="password1"
         placeholder="Password"></td></tr>';
-echo '<tr><td>Retype Password </td><td>:</td><td><input name="password" type="password" 
+echo '<tr><td>Retype Password </td><td>:</td><td><input name="password2" type="password" 
 	id="password2" placeholder="Password"></td></tr>';
 echo '<tr><td>&nbsp;</td><td>&nbsp;</td><td><input type="submit" name="Submit" 
 	value="Register"></td></tr></table></td></form></tr></table>';

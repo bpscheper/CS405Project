@@ -3,7 +3,7 @@
 echo '<html>';
 echo '<a href="../Home.php"><img src="../Logo.jpg" alt="Nile.com"></a>';
 echo '<table width="300" border="0" align="center" bgcolor="#CCCCCC"><tr>';
-echo '<form name="form1" method="post" action="check_employee.php"><td>';
+echo '<form name="form1" method="post" action="check_customer.php"><td>';
 echo '<table width="100%" border="0" cellpadding="3" cellspacing="1" 
 	bgcolor="#FFFFFF"><tr>';
 echo '<td colspan="3"><strong>Customer Login </strong></td></tr><tr><td 
