@@ -5,6 +5,7 @@ $host = "mysql.cs.uky.edu";
 $password = "u0712429";
 $database = "bpsc222";
 
+#establish connection to database
 $con = mysqli_connect($host, $username, $password, $database);
 if (mysqli_connect_errno($con)) {
   echo "error connecting to database";
@@ -19,16 +20,17 @@ else
   echo "Error creating table: " . mysqli_error($con) . "<br>";
 
 
-$sql = "CREATE TABLE Employee(eid INT NOT NULL, password CHAR(30), status 
-	CHAR(30), PRIMARY KEY (eid))";
+$sql = "CREATE TABLE Employee(eid CHAR(9) NOT NULL, password CHAR(30), status 
+	CHAR(30), name CHAR(30), PRIMARY KEY (eid))";
 if (mysqli_query($con, $sql)) 
   echo "Table Employee created successfully <br>";
 else 
   echo "Error creating table: " . mysqli_error($con) . "<br>";
 
 
-$sql = "CREATE TABLE Inventory(itemNum INT NOT NULL, quantity INT NOT NULL, 
-	price FLOAT NOT NULL, promotion FLOAT, PRIMARY KEY (itemNum))";
+$sql = "CREATE TABLE Inventory(itemNum INT NOT NULL, itemName CHAR(30), 
+	itemDescription CHAR(255), quantity INT NOT NULL, price FLOAT NOT 
+	NULL, promotion FLOAT, PRIMARY KEY (itemNum))";
 if (mysqli_query($con, $sql)) 
   echo "Table Inventory created successfully <br>";
 else 

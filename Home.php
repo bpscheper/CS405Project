@@ -26,11 +26,15 @@ if (isset($_SESSION["username"])) {
   echo 'Sign In</a></div><br>';
   echo '<div style="float:right"><a href="Login/customer_register.php">
 	Register Now</a></div>';
-}
-echo '<div style="position: absolute; bottom: 0; right: 0;"><a 
+  if (isset($_SESSION["employee"])) {
+      
+  }
+  else {
+    echo '<div style="position: absolute; bottom: 0; right: 0;"><a 
 	href="Login/employee_login.php">Employee Sign In</a></div>';
-echo '</body></html>';
-
+    echo '</body></html>';
+  }
+}
 echo '<div>';
 echo '</div>';
 
