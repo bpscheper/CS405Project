@@ -2,6 +2,8 @@
 
 session_start();
 
+echo '<a href="../Home.php"><img src="../Logo.jpg" alt="Nile.com"></a>';
+
 $username = "bpsc222";
 $host = "mysql.cs.uky.edu";
 $password = "u0712429";
@@ -23,10 +25,10 @@ if (mysqli_connect_errno($con)) {
     while($row = mysqli_fetch_array($result)) {
       $_SESSION["employee"] = $row['status'];
       $_SESSION["name"] = $row['name'];
-      echo '<html><body><a href="../Employee/employee_screen.php">Manage Store
-	</a></body></html>';
+      echo '<html><body><p><a href="../Employee/employee_screen.php">Manage 
+	Store </a></p></body></html>';
+    }
   }
-  echo $sql;
 }
 $mysql_close($con);
 

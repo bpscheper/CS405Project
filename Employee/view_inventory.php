@@ -22,8 +22,10 @@ if (mysqli_connect_errno($con)) {
         Price </th><th> Promotion </th></tr>';
   if (!empty($result)) {
     while($row = mysqli_fetch_array($result)) {
-      echo '<tr><td align="center">' . $row['itemNum'] . '</td><td align="center">' . $row['itemName'] . '</td><td align="center">' . $row['quantity'] . '</td><td align="center">' . $row['price'] . '</td><td align="center">' . $row['promotion'] . '</td>';
-      echo '</tr>';
+      echo '<tr><td align="center">' . $row['itemNum'] . '</td><td 
+	align="center">' . $row['itemName'] . '</td><td align="center">' . 
+	$row['quantity'] . '</td><td align="center">' . $row['price'] . '</td>
+	<td align="center">' . $row['promotion'] . ' %</td></tr>';
     }
   }
   echo '</table>';
