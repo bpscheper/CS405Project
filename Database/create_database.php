@@ -36,7 +36,30 @@ if (mysqli_query($con, $sql))
 else 
   echo "Error creating table: " . mysqli_error($con) . "<br>";
 
-$sql = "CREATE TABLE Order(orderNum INT NOT NULL, date CHAR(30))";
+$sql = "CREATE TABLE Orders(orderNum INT, date CHAR(30), PRIMARY 
+	KEY(orderNum))";
+if (mysqli_query($con, $sql))
+  echo "Table Orders created successfully <br>";
+else
+  echo "Error creating table: " . mysqli_error($con) . "<br>";
+
+
+$sql = "CREATE TABLE Places(username CHAR(30) NOT NULL, orderNum INT NOT NULL, 
+	FOREIGN KEY(username) REFERENCES Customer(username), FOREIGN KEY
+	(orderNum) REFERENCES Orders(orderNum))";
+if (mysqli_query($con, $sql))
+  echo "Table Places created successfully <br>";
+else
+  echo "Error creating table: " . mysqli_error($con) . "<br>";
+
+
+$sql = "CREATE TABLE Contained(orderNum INT, itemNum INT NOT NULL, 
+	amount INT NOT NULL)"; 
+if (mysqli_query($con, $sql))
+  echo "Table Contains created successfully <br>";
+else
+  echo "Error creating table: " . mysqli_error($con) . "<br>";
+
 
 mysql_close($con);
 ?>
