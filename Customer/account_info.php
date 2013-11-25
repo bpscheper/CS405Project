@@ -45,7 +45,7 @@ if (mysqli_connect_errno($con)) {
     echo '</body></html>';
 
   } else {
-    echo "You are not logged in. Would you like to? <br>";
+    echo "You are not logged in. Would you like to? <br>"
   }
 }
 

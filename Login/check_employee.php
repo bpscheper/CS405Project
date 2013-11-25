@@ -20,14 +20,19 @@ if (mysqli_connect_errno($con)) {
 
   $sql = "SELECT * FROM Employee E WHERE E.eid = '" . $eid . "' AND E.password 
 	= '" . $e_password . "'";
+  
   $result = mysqli_query($con, $sql);
-  if (!empty($result)) {
+  if (mysql_num_rows($result)) {
     while($row = mysqli_fetch_array($result)) {
       $_SESSION["employee"] = $row['status'];
       $_SESSION["name"] = $row['name'];
       echo '<html><body><p><a href="../Employee/employee_screen.php">Manage 
 	Store </a></p></body></html>';
     }
+  } else {
+    echo '<br>Error logging in. Try Again. <br>';
+    echo '<html><body><p><a href="employee_login.php"> Log In </a>
+	</p></body></html>';
   }
 }
 $mysql_close($con);

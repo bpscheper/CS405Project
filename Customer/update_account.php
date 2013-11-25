@@ -2,7 +2,7 @@
 
 echo '<html>';
 echo '<a href="../home.php"><img src="../Logo.jpg" alt="Nile.com"></a>';
-echo '<a href="customer_screen.php">Return to Options</a>';
+echo '<a href="../customer_screen.php">Return to Options</a>';
 echo '<table width="450" border="0" align="center" bgcolor="#CCCCCC"><tr>';
 echo '<form name="form1" method="post" action="account_info.php"><td>';
 echo '<table width="100%" border="0" cellpadding="3" cellspacing="1"
@@ -27,7 +27,7 @@ placeholder="Password"></td></tr>';
 echo '<tr><td>Retype Password </td><td>:</td><td><input name="password2" type="password"
         id="password2" placeholder="Password"></td></tr>';
 echo '<tr><td>&nbsp;</td><td>&nbsp;</td><td><input type="submit" name="Submit"
-        value="Update"></td></tr></table></td></form></tr></table>';
+        value="Update" formaction="update.php"></td></tr></table></td></form></tr></table>';
 echo '</html>';
 
 ?>

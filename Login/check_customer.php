@@ -17,7 +17,6 @@ else {
 
   $sql = "SELECT * FROM Customer C WHERE C.username = '" . $username . "' AND 
 	C.password = '" . $password . "'";
-  echo $sql;
   $result = mysqli_query($con, $sql);
   if (!empty($result)) {
     $_SESSION['username'] = $username;
