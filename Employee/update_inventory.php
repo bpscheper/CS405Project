@@ -41,6 +41,8 @@ if (mysqli_connect_errno($con)) {
   }
   echo '<tr><td><input type="submit" name="Submit" value="Submit">
 	</form></td></tr>';
+  echo '<tr><td><form name="go_back" action="employee_screen.php">
+	<input type="submit" value="Go Back"></form></td></tr>';
   echo '</table>';
 }
 

@@ -18,6 +18,10 @@ echo '<tr><td align="center"><input type="submit" value="Cart"
 // Order History option to view information of past orders
 echo '<tr><td align="center"><input type="submit" value="Order History"
 	formaction="order_history.php"></input></td></tr>';
+echo '<tr><td align="center"><input type="submit" value="Home"
+        formaction="../Home.php"></input></td></tr>';
+echo '<tr><td align="center"><input type="submit" value="Log Out"
+        formaction="../Login/Log_Out.php"></input></td></tr>';
 echo '</table></form>';
 echo '</body></html>';
 

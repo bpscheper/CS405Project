@@ -13,11 +13,14 @@ echo '<tr><td align="center"><input type="submit" value="Update Inventory"
 	formaction="update_inventory.php"></input></td></tr>';
 echo '<tr><td align="center"><input type="submit" value="Ship Orders" 
 	formaction="ship_orders.php"></input></td></tr>';
+if ($_SESSION['employee'] == "Manager") {
+  echo '<tr><td align="center"><input type="submit" value="Statistics"
+        formaction="statistics.php"></input></td></tr>';
+}
 echo '<tr><td align="center"><input type="submit" value="Add New Item" 
 	formaction="add_item.php"></input></td></tr>';
 echo '<tr><td align="center"><input type="submit" value="Log Out" 
 	formaction="../Login/Log_Out.php"></input></td></tr>';
 echo '</table></form>';
 echo '</body></html>';
-
 ?>

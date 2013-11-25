@@ -36,8 +36,8 @@ if (mysqli_query($con, $sql))
 else 
   echo "Error creating table: " . mysqli_error($con) . "<br>";
 
-$sql = "CREATE TABLE Orders(orderNum INT, date CHAR(30), PRIMARY 
-	KEY(orderNum))";
+$sql = "CREATE TABLE Orders(orderNum INT, date CHAR(30), status CHAR(10), 
+	PRIMARY KEY(orderNum))";
 if (mysqli_query($con, $sql))
   echo "Table Orders created successfully <br>";
 else

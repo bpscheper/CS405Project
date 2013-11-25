@@ -11,19 +11,19 @@ if (mysqli_connect($con)) {
 }
 
 $sql = "INSERT INTO Customer values ('bscheper', 'Brian', 'Scheper', '', 
-	'Lexington, 'Kentucky', '40503', 'bpsc222@g.uky.edu', 'CS405Project')";
+	'Lexington', 'Kentucky', '40503', 'bpsc222@g.uky.edu', 'CS405Project')";
 if (mysqli_query($con, $sql)) {
 } else 
   echo mysqli_error($con) . '<br>';
 
 $sql = "INSERT INTO Customer values ('jdrury', 'Jeremy', 'Drury', '', 
-	'Lexington, 'Kentucky', '40503', 'drury.jeremy@yahoo.com', 
+	'Lexington', 'Kentucky', '40503', 'drury.jeremy@yahoo.com', 
 	'CS405Project')";
 if (mysqli_query($con, $sql)) {
 } else
   echo mysqli_error($con) . '<br>';
 
-$sql = "INSERT INTO Customer values ('jliu', 'Jinze', 'Liu', '', 'Lexington, 
+$sql = "INSERT INTO Customer values ('jliu', 'Jinze', 'Liu', '', 'Lexington', 
 	'Kentucky', '40503', 'liuj@cs.uky.edu', 'CS405Project')";
 if (mysqli_query($con, $sql)) {
 } else

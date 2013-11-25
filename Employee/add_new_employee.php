@@ -17,7 +17,10 @@ echo '<tr><td>Status </td><td>:</td><td><input name="status" type="radio"
 echo '<tr><td>Password </td><td>:</td><td><input name="password" 
 	type="password" id="password" placeholder="Password"></td></tr>';
 echo '<tr><td>&nbsp;</td><td>&nbsp;</td><td><input type="submit" name="Submit"
-        value="Add Employee"></td></tr></table></td></form></tr></table>';
+        value="Add Employee"></td></tr></table></td></form></tr>';
+echo '<tr><form name="back" method="get" action="employee_screen.php"><td>';
+echo '<input type="submit" name="submit" value="Go Back"></td></tr>';
+echo '</table>';
 echo '</html>';
 
 

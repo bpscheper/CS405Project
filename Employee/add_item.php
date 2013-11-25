@@ -24,7 +24,10 @@ if ($_SESSION["employee"] == "Manager") {
 	type="text" id="promotion" placeholder="Promotion"></td></tr>';
 }
 echo '<tr><td>&nbsp;</td><td>&nbsp;</td><td><input type="submit" name="Submit"
-        value="Add Item"></td></tr></table></td></form></tr></table>';
+        value="Add Item"></td></tr></table></td></form></tr>';
+echo '<tr><form name="back" method="get" action="employee_screen.php"><td>';
+echo '<input type="submit" name="submit" value="Go Back"></td></tr>';
+echo '</table>';
 echo '</html>';
 
 

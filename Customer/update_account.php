@@ -2,7 +2,7 @@
 
 echo '<html>';
 echo '<a href="../home.php"><img src="../Logo.jpg" alt="Nile.com"></a>';
-echo '<a href="../customer_screen.php">Return to Options</a>';
+echo '<a href="customer_screen.php">Return to Options</a>';
 echo '<table width="450" border="0" align="center" bgcolor="#CCCCCC"><tr>';
 echo '<form name="form1" method="post" action="account_info.php"><td>';
 echo '<table width="100%" border="0" cellpadding="3" cellspacing="1"

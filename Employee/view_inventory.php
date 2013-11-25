@@ -28,6 +28,7 @@ if (mysqli_connect_errno($con)) {
 	<td align="center">' . $row['promotion'] . ' %</td></tr>';
     }
   }
+  echo '<tr><td><form name="go_back" action="employee_screen.php"><input type="submit" value="Go Back"></form></td></tr>';
   echo '</table>';
 }
 

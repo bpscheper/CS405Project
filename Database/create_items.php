@@ -22,6 +22,30 @@ if (mysqli_query($con, $sql)) {
 } else
   echo mysqli_error($con) . '<br>';
 
+$sql = "INSERT INTO Inventory values (734, 'Sports Puzzle', 'For the athletes amongst us', 76, 19.99, 0.00)";
+if (mysqli_query($con, $sql)) {
+  echo "Item 734 successfully added <br>";
+} else
+  echo mysqli_error($con) . '<br>';
+
+$sql = "INSERT INTO Inventory values (1234, 'Kids Puzzle', 'Fun, animated puzzle. For all ages', 13, 13.99, 0.00)";
+if (mysqli_query($con, $sql)) {
+  echo "Item 1234 successfully added <br>";
+} else
+  echo mysqli_error($con) . '<br>';
+
+$sql = "INSERT INTO Inventory values (9999, 'Art Puzzle', 'Are you the next Van Gogh?', 56, 14.99, 0.00)";
+if (mysqli_query($con, $sql)) {
+  echo "Item 9999 successfully added <br>";
+} else
+  echo mysqli_error($con) . '<br>';
+
+$sql = "INSERT INTO Inventory values (3886, 'Science Puzzle', 'Technology puzzle', 11, 17.99, 0.00)";
+if (mysqli_query($con, $sql)) {
+  echo "Item 3886 successfully added <br>";
+} else
+  echo mysqli_error($con) . '<br>';
+
 
 
 mysql_close($con);

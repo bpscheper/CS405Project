@@ -2,36 +2,41 @@
 
 session_start();
 
-echo '<html>';
-echo '<a href="../home.php"><img src="../Logo.jpg" alt="Nile.com"></a>';
-echo '<table width="450" border="0" align="center" bgcolor="#CCCCCC"><tr>';
-echo '<form name="form1" method="post" action="add_customer.php"><td>';
-echo '<table width="100%" border="0" cellpadding="3" cellspacing="1"
-        bgcolor="#FFFFFF"><tr>';
-echo '<td colspan="3"><strong>Customer Register </strong></td></tr><tr><td
-        width="78">First Name </td><td width="6">:</td><td width="294"><input
-        name="fname" type="text" id="fname" placeholder="First Name"></td>
-        </tr><tr><td>Last Name </td><td>:</td><td><input name="lname"
-        type="text" id="lname" placeholder="Last Name"></td></tr>';
-echo '<tr><td>Email </td><td>:</td><td><input name="email" type="text" id="email"
-        placeholder="Email"></td></tr>';
-echo '<tr><td>Street Address </td><td>:</td><td><input name="street" type="text" id="street"
-        placeholder="Street"></td></tr>';
-echo '<tr><td>City </td><td>:</td><td><input name="city" type="text" id="city"
-        placeholder="City"></td></tr>';
-echo '<tr><td>State </td><td>:</td><td><input name="state" type="text" id="state"
-        placeholder="State"></td></tr>';
-echo '<tr><td>Zip Code </td><td>:</td><td><input name="zip" type="text" id="zip"
-        placeholder="Zip Code"></td></tr>';
-echo '<tr><td>Username </td><td>:</td><td><input name="username" type="text" id="username"
-        placeholder="Username"></td></tr>';
-echo '<tr><td>Password </td><td>:</td><td><input name="password1" type="password" id="password1"
-        placeholder="Password"></td></tr>';
-echo '<tr><td>Retype Password </td><td>:</td><td><input name="password2" type="password"
-        id="password2" placeholder="Password"></td></tr>';
-echo '<tr><td>&nbsp;</td><td>&nbsp;</td><td><input type="submit" name="Submit"
-        value="Register"></td></tr></table></td></form></tr></table>';
-echo '</html>';
+echo '<a href="../Home.php"><img src="../Logo.jpg" alt="Nile.com"></a>';
 
+$username = "bpsc222";
+$host = "mysql.cs.uky.edu";
+$password = "u0712429";
+$database = "bpsc222";
+
+#establish connection to database
+$con = mysqli_connect($host, $username, $password, $database);
+if (mysqli_connect_errno($con)) {
+  echo "error connecting to database";
+} else {
+
+  $sql = "SELECT * FROM Inventory";
+  $result = mysqli_query($con, $sql);
+  echo '<html><body><form name="ship" method="post" action="ship.php">
+	<table align="center" border="1">';
+  echo '<tr><th> Order Number </th><th> Date </th><th> Status </th><th>
+        Ship </th></tr>';
+  if (!empty($result)) {
+    while($row = mysqli_fetch_array($result)) {
+      echo '<tr><td align="center">' . $row['orderNum'] . '</td><td
+        align="center">' . $row['Date'] . '</td><td align="center">' .
+        $row['status'] . '</td><td align="center">';
+      if ($orw['status'] == "pending")
+        echo '<input type="radio" name="' . $row['orderNum'] . '" value="yes">
+	  Yes<br><input type="radio name="' . $row['orderNum'] . '" value="no">
+	  <br>';
+      echo '</td></tr>';
+    }
+  }
+  echo '<tr><td><form name="go_back" action="employee_screen.php"><input type="submit" value="Go Back"></form></td></tr>';
+  echo '</table>';
+
+
+}
 
 ?>
