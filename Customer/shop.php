@@ -17,24 +17,28 @@ if (mysqli_connect_errno($con)) {
   
   $sql = "SELECT * FROM Inventory";
   $result = mysqli_query($con, $sql);
-  echo '<html><body><form name="shop" method="get" action="cart.php"><table align="center" border="1">';
+  echo '<html><body><form name="shop" method="post" action="cart.php"><table align="center" border="1">';
   echo '<tr><th> Item Number </th><th> Item Name </th><th> Quantity </th><th>
 Price </th><th> Promotion </th></tr>';
   if (!empty($result)) {
     while($row = mysqli_fetch_array($result)) {
-      echo '<tr><td align="center">' . $row['itemNum'] . '</td><td
-        align="center">' . $row['itemName'] . '</td><td align="center">' .
-        $row['quantity'] . '</td><td align="center">' . $row['price'] . '</td>
-        <td align="center">' . $row['promotion'] . '</td><td align="center">
-	<input type="submit" value"Add to Cart" formaction="cart.php"></td></tr>';
+      if ($row['quantity'] != 0) {
+        echo '<tr><td align="center">' . $row['itemNum'] . '</td><td
+	  align="center">' . $row['itemName'] . '</td><td align="center">' .
+          $row['quantity'] . '</td><td align="center">' . $row['price'] . '</td>
+	  <td align="center">' . $row['promotion'] . '</td><td><input 
+	  type="text" name="' . $row['itemNum'] . '"></td><td align="center">
+	  <input type="submit" value="Add to Cart" formaction="cart.php"></td>
+	  </tr>';
+      }
     }
   }
   echo '</form></table>';
+  echo '<form>';
+  echo '<input type="submit" value="Back" formaction="customer_screen.php">';
+  echo '</form>';
 }
 
-$mysqli_close($con);	
-
-// Add options to add X quantity to Cart
-
+$mysqli_close($con);        
 
 ?>

@@ -22,7 +22,7 @@ if (mysqli_connect_errno($con)) {
 	= '" . $e_password . "'";
   
   $result = mysqli_query($con, $sql);
-  if (mysql_num_rows($result)) {
+  if (!mysql_num_rows($result)) {
     while($row = mysqli_fetch_array($result)) {
       $_SESSION["employee"] = $row['status'];
       $_SESSION["name"] = $row['name'];

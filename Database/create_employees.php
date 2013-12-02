@@ -10,7 +10,7 @@ if (mysqli_connect($con)) {
   echo "Trouble connecting to database";
 }
 
-$sql = "INSERT INTO Employee values ('00001', 'CS405Project', 'Manager', 
+$sql = "INSERT INTO Employee values ('1', 'test', 'Manager', 
 	'Brian Scheper')";
 if (mysqli_query($con, $sql)) {
 } else 

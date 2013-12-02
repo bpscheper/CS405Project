@@ -20,10 +20,12 @@ if (isset($_SESSION["username"])) {
   echo '<div style="position: absolute; top: 120; left: 10"><a href=
 	"Customer/account_info.php"> Manage Account </a></div>';
   echo '<div style="position: absolute; top: 145; left: 10"><a href=
-        "Customer/order_history.php"> View Purchase History </a></div>';
+        "Customer/shop.php"> Start Shopping </a></div>';
   echo '<div style="position: absolute; top: 170; left: 10"><a href=
-        "Customer/cart.php"> View Shopping Cart </a></div>';
+        "Customer/order_history.php"> View Purchase History </a></div>';
   echo '<div style="position: absolute; top: 195; left: 10"><a href=
+        "Customer/cart.php"> View Shopping Cart </a></div>';
+  echo '<div style="position: absolute; top: 220; left: 10"><a href=
         "Customer/recommended.php"> Recommended for Me </a></div>';
   echo '<div style="float:right">Hello, <a href="Customer/account_info.php">';
   $name = $_SESSION["fname"];
@@ -35,7 +37,8 @@ if (isset($_SESSION["username"])) {
   echo '<div style="float:right"><a href="Login/customer_register.php">
 	Register Now</a></div>';
   if (isset($_SESSION["employee"])) {
-      
+    echo '<div style="position: absolute; bottom: 0; right: 0;"><a
+        href="Employee/employee_screen.php">Employee Screen</a></div>';      
   }
   else {
     echo '<div style="position: absolute; bottom: 0; right: 0;"><a 
@@ -43,7 +46,7 @@ if (isset($_SESSION["username"])) {
   }
 }
 echo '<br><div style="float:left"> Search the Store </a><input type="text" 
-	name="search" size="80"><input type="submit" name="Submit" 
+	name="search" size="80"><input type="submit" name="Search" 
 	formaction="search.php"></div>';
 $sql = "SELECT * FROM Inventory WHERE itemDescription LIKE '%" .
         $search_string . "%' UNION SELECT * FROM Inventory";
@@ -56,8 +59,6 @@ if (!mysqli_num_rows($result)) {
         <tr><th> Item Number </th><th> Item Name </th><th> Description </th>
         <th> Quantity </th><th>Price </th><th> Promotion </th><th> New Price
         </th>';
-  if (isset($_SESSION["username"])) 
-    echo '<th></th><th></th></tr>';
   while ($row = mysqli_fetch_array($result)) {
     echo '<tr><td align="center">' . $row['itemNum'] . '</td><td align="center"
         >' . $row['itemName'] . '</td><td align="center">' . $row[
@@ -73,20 +74,11 @@ if (!mysqli_num_rows($result)) {
       echo '<font color="red">$' . $new_price . '</font></td>';
     else
       echo '$' . $new_price . '</td>';
-    if (isset($_SESSION["username"])) {
-      echo '<td><form name="buy" method="post" formaction="buy.php"><input
-        type="submit" name="' . $row['itemNum'] . 'buy" value="Buy Now"></form>
-        </td>';
-      echo '<td><form name="cart" method="post" formaction="add_to_cart.php">
-        <input type="submit" name="' . $row['itemNum'] . 'cart" value=
-        "Add To Cart"></form></td></tr>';
-    }
-
+    echo '</form>';
   }
 
   echo '</table></div>';
 }
-
 
 echo '<div style="position: absolute; bottom: 20; right: 0;"><img 
 	src="Pictures/ad1.jpg" alt="ad"></div>';

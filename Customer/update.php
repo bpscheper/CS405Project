@@ -33,7 +33,7 @@ if ($password1 != $password2){
 } else {
   $sql = "UPDATE Customer SET fname=$fname, lname=$lname, street=$street, 
 	  city=$city, state=$state, zip=$zip, email=$email, password=$password1
-	  WHERE username=$username");
+	  WHERE username=$_SESSION['username']");
   echo $sql;
   if (mysqli_query($con, $sql)) {
     $_SESSION['username'] = $username;

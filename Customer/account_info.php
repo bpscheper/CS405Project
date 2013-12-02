@@ -17,20 +17,20 @@ if (mysqli_connect_errno($con)) {
   if (isset($_SESSION['username'])) {
 
     // Display Customer Information
-    $sql = "SELECT * FROM Customer WHERE Customer.username == $username";
+    $sql = "SELECT * FROM Customer WHERE username = '" . $_SESSION['username']. "'";
     $result = mysqli_query($con, $sql);
     echo '<html><body><table align="center" border="1">';
     echo '<tr><th> First Name </th><th> Last Name </th><th> Street </th><th>
   	  City </th><th> State </th><th> Zip </th><th> Email </th><th> 
 	  Password </th></tr>';
-    if (!empty($result)) {
+    if (!mysql_num_rows($result)) {
       while($row = mysqli_fetch_array($result)) {
         echo '<tr><td align="center">' . $row['fname'] . '</td><td
           align="center">' . $row['lname'] . '</td><td align="center">' .
           $row['street'] . '</td><td align="center">' . $row['city'] . '</td>
           <td align="center">' . $row['state'] . '</td><td align="center">' 
 	  . $row['zip'] . '</td><td align="center">' . $row['email'] . 
-	  '</td><td align="center">' . $row['password1'] . ' %</td></tr>';
+	  '</td><td align="center">' . $row['password'] . ' </td></tr>';
       }
     }
     echo '</table>';
@@ -45,7 +45,7 @@ if (mysqli_connect_errno($con)) {
     echo '</body></html>';
 
   } else {
-    echo "You are not logged in. Would you like to? <br>"
+    echo "You are not logged in. Would you like to? <br>";
   }
 }
 
