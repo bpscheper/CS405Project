@@ -11,7 +11,7 @@ if (mysqli_connect_errno($con)) {
   echo "error connecting to database";
 }
 
-$sql = "INSERT INTO Orders values (34566, '11/24/13', 'Pending')";
+$sql = "INSERT INTO Orders values (34577, '12/24/12', 'Pending')";
 if (mysqli_query($con, $sql)) {
   echo "Order 34566 successfully added <br>";
 } else

@@ -21,16 +21,14 @@ else {
   if (!empty($result)) {
     $_SESSION['username'] = $username;
     while($row = mysqli_fetch_array($result)) {
-      echo "Hello";
       $_SESSION["fname"] = $row['fname'];
-      echo $_SESSION['fname'];
       echo '<html><body><p>Welcome back, ' . $row['fname'] . '</p>';
       echo '<a href="../Home.php">Start Shopping</a>';
       echo '</body></html>';
     }
   }
-  echo '<form "goback" method="get" action="../Home.php">';
-  echo '<input type="submit" name="goback" value="Home"></form>';
+  echo '<form "goback" method="get" action="../Customer/account_info.php">';
+  echo '<input type="submit" name="goback" value="Manage Account"></form>';
 }
 
 mysql_close($con);

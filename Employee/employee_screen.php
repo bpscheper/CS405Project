@@ -19,6 +19,8 @@ if ($_SESSION['employee'] == "Manager") {
 }
 echo '<tr><td align="center"><input type="submit" value="Add New Item" 
 	formaction="add_item.php"></input></td></tr>';
+echo '<tr><td align="center"><input type="submit" value="Home Page"
+        formaction="../Home.php"></input></td></tr>';
 echo '<tr><td align="center"><input type="submit" value="Log Out" 
 	formaction="../Login/Log_Out.php"></input></td></tr>';
 echo '</table></form>';

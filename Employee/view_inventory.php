@@ -29,6 +29,7 @@ if (mysqli_connect_errno($con)) {
     }
   }
   echo '<tr><td><form name="go_back" action="employee_screen.php"><input type="submit" value="Go Back"></form></td></tr>';
+  echo '<tr><td><form name="go_back" action="update_inventory.php"><input type="submit" value="Update"></form></td></tr>';
   echo '</table>';
 }
 
