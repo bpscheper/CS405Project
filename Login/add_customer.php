@@ -35,7 +35,6 @@ if ($password1 != $password2){
   $sql = "INSERT INTO Customer values ('" . $username . "', '" . $fname . "', 
 	'" . $lname . "', '" . $street . "', '" . $city . "', '" . $state . "', 
 	'" . $zip . "', '" . $email . "', '" . $password1 . "')";
-  echo $sql;
   if (mysqli_query($con, $sql)) {
     $_SESSION['username'] = $username;
     $_SESSION['fname'] = $fname;
